@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Cart</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Poppins:400,600,700&display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+    .quantity-input{ 
+        width: 90px;
+        ;
+    }
+
+    .cart-item{
+       
+        margin: auto;
+    }
+
+    .image-container {
+    position: relative;
+    width: 300px; /* Fixed width for the container */
+    height: 300px; /* Fixed height for the container */
+    overflow: hidden;
+    border-radius: 0.5rem; /* Rounded corners if needed */
+}
+
+.image-fit {
+    object-fit: contain; /* Ensure the entire image is visible within the container */
+    width: 100%;
+    height: 100%;
+}
+
+.cart-item {
+    margin-bottom: 4rem; /* Adjust as needed for spacing between items */
+    border-radius: 10px;
+}
+
+
+</style>
+<body>
+    <div class="hero_area">
+        <!-- header section starts -->
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo.png" alt="">
+                        <span>Laxmi Gems and Jewels</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.html">About</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="goldproduct.html">Gold</a></li>
+                                        <li><a class="dropdown-item" href="silverproduct.html">Silver</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="gemsproduct.html">Gems</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contact us</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="quote_btn-container">
+                            <a href="#">
+                                <img src="images/cart.png" alt="">
+                                <div class="cart_number">0</div>
+                            </a>
+                            <form class="form-inline">
+                                
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+
+        <!-- Cart Section -->
+        <section class="container my-5">
+            <h1 class="text-4xl font-bold text-center mb-5">Your Cart</h1>
+            <div id="cartItems" class="space-y-4">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Order Details Section -->
+        <section class="container my-5">
+            <h2 class="text-center">Order Details</h2>
+            <form id="orderForm" style="max-width: 50%; margin: auto;">
+                <div class="mb-3">
+                    <label for="customerName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="customerName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phoneNumber" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div id="orderDetails" class="row">
+                    <!-- Order detail fields will be dynamically inserted here -->
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="6" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button id="placeorder" type="submit" class="btn btn-primary btn-lg">Place Order</button>
+                </div>
+            </form>
+        </section>
+
+        
+
+
+    </div>
+
+    <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="info_container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="info_logo">
+              <a href="about.html" style="text-decoration: none;">
+                <img src="images/logo.png" alt="">
+                <span>
+                  laxmi
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_contact">
+              <a href="" style="text-decoration: none;">
+                <img src="images/location.png" alt="">
+                <span >
+                  Laxmi Gems and Jewels
+                  No. 123, Avenue Road,
+                  Near City Market,
+                  Bangalore, Karnataka - 560002
+                  India
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_contact">
+              <a href="" style="text-decoration: none;">
+                <img src="images/phone.png" alt="">
+                <span>
+                  +91 831 068 0354
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_contact">
+              <a href="" style="text-decoration: none;">
+                <img src="images/mail.png" alt="">
+                <span>
+                  laxmigemsandjewels17@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="info_form">
+          <div class="d-flex justify-content-center">
+            <h5 class="info_heading">
+              Newsletter
+            </h5>
+          </div>
+          <form action="">
+            <div class="email_box">
+              <label for="email2">Enter Your Email</label>
+              <input type="text" id="email2">
+            </div>
+            <div>
+              <button>
+                subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="info_social">
+          <div class="d-flex justify-content-center">
+            <h5 class="info_heading">
+              Follow Us
+            </h5>
+          </div>
+          <div class="social_box">
+            <a href="">
+              <img src="images/fb.png" alt="">
+            </a>
+            <a href="">
+              <img src="images/twitter.png" alt="">
+            </a>
+            <a href="">
+              <img src="images/linkedin.png" alt="">
+            </a>
+            <a href="https://www.instagram.com/laxmi_gems_jewels?igsh=Z3NkZDQxNHdrcmlj">
+              <img src="images/insta.png" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="index.html">Laxmi Gems and Jewels</a>
+        </p>
+      </section>
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize cart if it doesn't exist
+            if (!localStorage.getItem('cart')) {
+                localStorage.setItem('cart', JSON.stringify([]));
+            }
+
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cartItems');
+            
+            cartItems.forEach(item => {
+                const itemHTML = `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.title}">
+                        <div class="cart-item-details">
+                            <h5>${item.title}</h5>
+                            <p>${item.description}</p>
+                            
+                        </div>
+                        <button class="btn btn-danger" onclick="removeFromCart(${index})">Remove</button>
+                    </div>
+                `;
+                cartContainer.insertAdjacentHTML('beforeend', itemHTML);
+            });
+
+            // Update cart number in navbar
+            updateCartNumber();
+        });
+
+        function updateCartNumber() {
+            const cartNumber = (JSON.parse(localStorage.getItem('cart')) || []).length;
+            document.querySelector('.cart_number').textContent = cartNumber;
+        }
+
+            window.removeFromCart = function(index) {
+                if (index >= 0 && index < cart.length) {
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    displayCartItems();
+                } else {
+                    console.error('Invalid index for removing cart item.');
+                }
+            }
+
+            displayCartItems();
+        
+
+        // uploading 
+    </script> -->
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function renderCart() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            cartItemsContainer.innerHTML = ''; // Clear existing content
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                console.log(item); // Check each item's structure
+
+                const productHTML = `
+                    <div class="cart-item mb-6 p-4 border border-gray-300 rounded-lg">
+                        <h5 class="text-lg font-semibold mb-4">${item.title}</h5>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="image-container w-32 h-32 overflow-hidden rounded-lg">
+                                    <img src="${item.image}" alt="${item.title}" class="image-fit w-full h-full">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <p class="text-gray-700 mb-4">${item.description}</p>
+                                <div class="mb-4">
+                                    <label for="quantity-${index}" class="block text-sm font-medium text-gray-700">Quantity</label>
+                                    <input type="number" class="quantity-input form-control w-full border-gray-300 rounded-md" id="quantity-${index}" value="${item.quantity || 1}" min="1">
+                                </div>
+                                ${item.source === 'silverproduct.html' ? `
+                                <div class="mb-4">
+                                    <label for="grams-${index}" class="block text-sm font-medium text-gray-700">Enter Grams</label>
+                                    <input type="text" class="form-control w-full border-gray-300 rounded-md" id="grams-${index}" placeholder="Enter Grams" value="${item.grams || ''}">
+                                </div>` : ''}
+                                <button class="btn btn-danger w-full mt-4" onclick="removeFromCart(${index})">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.insertAdjacentHTML('beforeend', productHTML);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCart);
+
+
+        function updateCart() {
+            cart = cart.map((item, index) => {
+                const quantity = document.getElementById(`quantity-${index}`).value;
+                const grams = item.source === 'silverproduct.html' ? document.getElementById(`grams-${index}`).value : '';
+                return { ...item, quantity, grams };
+            });
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        document.getElementById('orderForm').addEventListener('submit',function(e) {
+            e.preventDefault(); // Prevent form submission
+            updateCart();
+
+            const formData = {
+                customerName: document.getElementById('customerName').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+                products: cart.map(item => ({
+                    productName: item.title,
+                    quantity: document.getElementById(`quantity-${cart.indexOf(item)}`).value,
+                    grams: item.source === 'silverproduct.html' ? document.getElementById(`grams-${cart.indexOf(item)}`).value : '',
+                })),
+                orderDateTime: new Date().toLocaleString()
+            };
+
+            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+            const targetUrl = 'https://script.google.com/macros/s/AKfycbzwi-E6tIHKK5wFAAftn9ryX4c5iuzeQLWIPqGegB77dmIMegnQALFJMCBHLLlXFUPlMg/exec';
+
+
+            fetch(proxyUrl + targetUrl,{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('Order placed successfully!');
+                    localStorage.removeItem('cart'); // Clear cart after submission
+                    window.location.href = 'index.html'; // Redirect to a thank you page
+                } else {
+                    alert('There was an error placing your order. Please try again.');
+                } // Re-render the cart
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error placing your order. Please try again.');
+            });
+        });
+
+ 
+    </script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
