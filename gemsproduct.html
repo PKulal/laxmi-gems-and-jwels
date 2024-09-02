@@ -11,7 +11,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
       
-        <title>Laxmi Gems and Jewels </title>
+        <title>Gems Product </title>
         <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
       
         <!-- slider stylesheet -->
@@ -32,6 +32,73 @@
             background-color: #745abd;
             color: #000000;
           }
+           
+          /* Ensure that the product boxes maintain the same size */
+          .card {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              height: 100%;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+
+          .card-img-top {
+              object-fit: cover;
+              height: 200px; /* Fixed height for images */
+          }
+
+          .card-body {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              padding: 1rem;
+          }
+
+          .btn-primary {
+              background-color: #745abd;
+              color: #ffffff;
+              border: none;
+          }
+
+          .btn-primary:hover {
+              background-color: #6b4f9b;
+          }
+
+          /* Media queries for responsiveness */
+          @media (max-width: 575.98px) {
+              .card {
+                  margin-bottom: 1rem;
+              }
+
+              .card-img-top {
+                  height: 150px; /* Adjust image height for mobile */
+              }
+          }
+
+          @media (min-width: 576px) and (max-width: 767.98px) {
+              .card {
+                  margin-bottom: 1rem;
+              }
+
+              .card-img-top {
+                  height: 180px; /* Adjust image height for tablets */
+              }
+          }
+
+          @media (min-width: 768px) and (max-width: 991.98px) {
+              .card-img-top {
+                  height: 200px; /* Adjust image height for small desktops */
+              }
+          }
+
+          @media (min-width: 992px) {
+              .card-img-top {
+                  height: 220px; /* Adjust image height for larger desktops */
+              }
+          }
+
         </style>
       </head>
 <body>
@@ -73,6 +140,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact us</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart</a>
+                  </li>
                   
                 </ul>
   
@@ -84,9 +154,6 @@
                     0
                   </div>
                 </a>
-                <form class="form-inline">
-                  
-                </form>
               </div>
             </div>
           </nav>

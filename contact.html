@@ -12,7 +12,8 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Laxmi Gems and Jewels</title>
+  <title>Contact Us </title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
@@ -69,6 +70,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact us</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cart.html">Cart</a>
+                </li>
                 
               </ul>
 
@@ -80,9 +84,6 @@
                   0
                 </div>
               </a>
-              <form class="form-inline">
-                
-              </form>
             </div>
           </div>
         </nav>
@@ -244,39 +245,27 @@
   </section>
   <!-- footer section -->
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('contactForm');
-      form.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent the default form submission
-        
-        const formData = new FormData(form);
-        const data = {
-          name: formData.get('name'),
-          email: formData.get('email'),
-          phone: formData.get('phone'),
-          message: formData.get('message')
-        };
-        
-        fetch('https://script.google.com/macros/s/AKfycbwRZUpEdM0tfs9VNMXrM20X2Zj3GSvZB2FMmyhWkYbKh5U_jE35s6-EhDX03xPBlSjx/exec', { // Replace with your Web App URL
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(result => {
-          alert('Form submitted successfully');
-          form.reset(); // Reset the form after successful submission
-        })
-        .catch(error => {
-          alert('Error submitting the form');
-          console.error('Error:', error);
+  <!-- EmailJS Library -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("sXgY3463fOH411A4W"); // Replace with your EmailJS user ID
+    })();
+
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // These IDs from the previous steps
+      emailjs.sendForm('service_56nmy4e', 'template_qe6o3yf', this)
+        .then(function () {
+          alert('Your message has been sent successfully! Laxmi Gems and Jewels contact you soon!');
+        }, function (error) {
+          alert('Failed to send the message, please try again.');
         });
-      });
     });
   </script>
+
+  
   
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
