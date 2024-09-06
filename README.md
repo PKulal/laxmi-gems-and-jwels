@@ -1,4 +1,8 @@
-# Laxmi Gems and Jewels 💎
+<div align="center">
+  <h1 align="center">Laxmi Gems and Jewels 💎</h1>  
+    <img src="Demo.gif" alt="Laxmi Gems and Jewels" />  
+</div>
+
 
 ### A Stunning Jewelry Website for Gold, Silver, and Gemstone Lovers ✨
 
