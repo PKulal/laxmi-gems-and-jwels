@@ -20,7 +20,7 @@
     <script type="text/javascript">
     (function(){
         emailjs.init({
-            publicKey: "sXgY3463fOH411A4W",
+            publicKey: "PUBLIC KEY",//public key of emailjs
         });
     })();
     </script>
@@ -348,19 +348,8 @@
 
 
 
-    
-
         
 
-        
-        // Initialize EmailJS
-        // (function() {
-        //     emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
-        // })();
-
-        // 'service_uafzbjd', 'template_8dop5za'
-
-        // Capture form submission
         // Capture form submission
         document.getElementById('orderForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent form submission
@@ -412,9 +401,9 @@
             };
 
             // Send email using EmailJS
-            emailjs.send('service_uafzbjd', 'template_8dop5za', templateParams)
+            emailjs.send('SERVICE_ID', 'TEMPLATE_ID', templateParams)
                 .then(function(response) {
-                    alert('Order successfully placed!');
+                    alert('Order successfully placed! \n Laxmi Gems and Jewels Contact you soon!!');
 
                     // Clear cart after successful email
                     localStorage.removeItem('cart'); // Clear the cart from localStorage
@@ -427,11 +416,6 @@
                 });
         });
 
-
-
-
-
-    
  
     </script>
     

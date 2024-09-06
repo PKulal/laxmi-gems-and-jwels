@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            font-size: 16px;
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .details p {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .details p strong {
+            color: #3498db;
+        }
+        .products h3 {
+            color: #e67e22;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 10px;
+            margin-top: 20px;
+            font-size: 22px;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e1e1e1;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #95a5a6;
+        }
+        .footer p {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>New Order Details</h2>
+
+        <div class="details">
+            <p><strong>Customer Name:</strong> {{customer_name}}</p>
+            <p><strong>Phone Number:</strong> {{customer_phone}}</p>
+            <p><strong>Email:</strong> {{customer_email}}</p>
+            <p><strong>Address:</strong> {{customer_address}}</p>
+        </div>
+
+        <div class="products">
+            <h3>Ordered Products:</h3>
+            <pre>{{product_details}}</pre> <!-- Product details as one string -->
+        </div>
+
+        <div class="footer">
+            <p>Purity of sign</p>
+            <p><strong>Laxmi Gems and Jewels</strong></p>
+        </div>
+    </div>
+
+</body>
+</html>

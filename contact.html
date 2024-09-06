@@ -249,14 +249,14 @@
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script type="text/javascript">
     (function () {
-      emailjs.init("sXgY3463fOH411A4W"); // Replace with your EmailJS user ID
+      emailjs.init("PUBLIC_KEY"); // Replace with your EmailJS user ID
     })();
 
     document.getElementById('contactForm').addEventListener('submit', function (event) {
       event.preventDefault();
 
       // These IDs from the previous steps
-      emailjs.sendForm('service_56nmy4e', 'template_qe6o3yf', this)
+      emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', this)
         .then(function () {
           alert('Your message has been sent successfully! Laxmi Gems and Jewels contact you soon!');
         }, function (error) {

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        .header {
+            background-color: #f5a623;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            color: #f5a623;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .content p span {
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333333;
+            color: #ffffff;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #f5a623;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>New Contact Us Form Submission</h1>
+        </div>
+        <div class="content">
+            <h2>Details:</h2>
+            <p><span>Name:</span> {{name}}</p>
+            <p><span>Email:</span> {{email}}</p>
+            <p><span>Phone:</span> {{phone}}</p>
+            <p><span>Message:</span></p>
+            <p>{{message}}</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024  Laxmi Gems and Jewel . All rights reserved.</p>
+            <p>Need support? <a href="mailto:laxmigemsandjewels17@gmail.com">Contact us</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
